@@ -1,25 +1,3 @@
-// 서브메뉴
-const searchEl = document.querySelector('.search');
-//document는 하나의 요소
-//document대신 searchEl을 사용하여 .search를 두번 찾는 일을 없앴다
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function(){
-  searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function(){
-  searchEl.classList.add('focused');
-  //searchInputEl에 html요소를 추가함
-  searchInputEl.setAttribute('placeholder', '통합 검색');
-});
-
-searchInputEl.addEventListener('blur', function(){
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder', '')
-});
-
-
 //우측 배너, toTop버튼
 const badgeEl = document.querySelector('header .badges');
 const totopEl = document.querySelector('#to-top');
@@ -166,7 +144,3 @@ spyEls.forEach(function(spyEl){
   .setClassToggle(spyEl, 'show') //spyEl에 show클래스를 toggle함
   .addTo(new ScrollMagic.Controller()); //ScrollMagic에 설정된 요소를 넣고 동작시킴
 });
-
-// get Time
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear();
